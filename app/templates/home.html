@@ -1,0 +1,81 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<header>
+  <a>
+    <span id="logo">
+      Logo
+    </span>
+  </a>
+</header>
+
+<div class="row no-gutters">
+  <div class="col no-gutters">
+    <div class="leftside">
+      <section class="content-info">
+	<span>
+	  Beneficios
+	</span>
+
+	<div class="content-benefits">
+          <span>
+            Artista
+            <ul class="artist">
+	      <li>
+		Un espacio para promover tus eventos
+	      </li>
+	    </ul>
+	  </span>
+
+	  <span>
+	    Usuario
+	    <ul class="users">
+	      <li>
+		Descubrir artistas y eventos relacionados a ellos cerca de ti.
+	      </li>
+	    </ul>
+	</div>
+      </section>
+    </div>
+  </div>
+
+  <div class="col no-gutters">
+    <div class="rightside">
+      <section class="content-signup">
+	{% for form in forms %}
+        <form action="signup.html" method="GET">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder={{ form.name }} required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder={{ form.email }}required>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder={{ form.password }} required>
+          </div>
+	  <div>
+            <label for="confirm-pass">Confirm Password:</label>
+            <input type="confirm-pass" name="confirm-pass" placeholder={{ form.confirm }} required>
+	  </div>
+          <button type="submit">Submit</button>
+	  {% endfor %}
+        </form>
+      </section>
+    </div>
+  </div>
+
+<footer>
+  <div class="footer-text">
+    <span>
+      Contact Us
+    </span>
+    <span>
+      FAQ
+    </span>
+  </div>
+</footer>
+
+{% endblock %}
