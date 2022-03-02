@@ -1,0 +1,33 @@
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color:  #666666;
+    width: 100%;
+    margin: 0px;
+}
+
+header {
+    background-color: #99ccff;
+    min-height: 70px;
+}
+
+#logo {
+    border: 5px solid yellow;
+    margin: 30px 0px 0px 0px;
+    font-size: 30px;
+}
+
+footer {
+    background-color: #99ccff;
+    width: 100%;
+    height: 40px;
+    position: fixed;
+    bottom: 0px;
+    border: 5px solid yellow;
+}
+
+.footer-text {
+    text-align: center;
+}
