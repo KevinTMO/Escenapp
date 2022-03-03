@@ -1,15 +1,15 @@
+from flask import Flask, render_template, url_for, flash, redirect, request
 from datetime import datetime
-from flask import Flask, render_template, url_for, flash, redirect
 from flask_sqlalchemy import SQLALCHEMY_DATABASE_URL
 from forms import RegistrationForm, LoginForm
 
 
 app = Flask(__name__)
-app.congig['SECRET_KEY'] = ''
+app.config['SECRET_KEY'] = '9ad4d2f8fdaaac12aa160ef91df5ed9b'
 APP.CONFIG['SQLALCHEMY_DATABASE_URL'] = ''
 db = SQLALlchemy(app)
 
-
+'''
 forms = [
     {
         'name': 'Sergio',
@@ -26,25 +26,47 @@ forms = [
     }
 ]
 
-'''
 numbers = [
     {
         'nmbr': [1, 2]
     }
 ]
-
-
 '''
 
-
 def __repr__(self):
+    '''
+    Return a reprs string of objects
+    '''
     return f"Post('{self.title}', '{self.date_posted}')"
 
 
 @app.route('/')
 @app.route('/home')
 def home():
-    return render_template('home.html', forms=forms, title='Artist')
+    form = RegistrationForm()
+
+    if request.method == 'POST':
+        if form.validate_on_submit():
+            flash(f'Account created for {form.name.data}!', 'success')
+            return redirect(url_for('login'))
+    return render_template('home.html', form=form)
+
+
+'''
+Not in use at the moment. For testing purposes.
+
+@app.route('/register')
+def register():
+    form = RegistrationForm()
+    return render_template('register.html', title='Register', form=form)
+'''
+
+# Using this route just for redirection test
+@app.route('/login')
+def login():
+    form = LoginForm()
+    return render_template('login.html', title='Login', form=form)
+
 
 """
 For Ilustration Purposes-->
