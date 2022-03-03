@@ -1,13 +1,13 @@
-from datetime import datetime
+# from datetime import datetime
 from flask import Flask, render_template, url_for, flash, redirect
-from flask_sqlalchemy import SQLALCHEMY_DATABASE_URL
+# from flask_sqlalchemy import SQLALCHEMY_DATABASE_URL
 from forms import RegistrationForm, LoginForm
 
 
 app = Flask(__name__)
-app.congig['SECRET_KEY'] = ''
-APP.CONFIG['SQLALCHEMY_DATABASE_URL'] = ''
-db = SQLALlchemy(app)
+app.config['SECRET_KEY'] = ''
+# APP.CONFIG['SQLALCHEMY_DATABASE_URL'] = ''
+# db = SQLAlchemy(app)
 
 
 forms = [
