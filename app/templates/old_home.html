@@ -1,0 +1,150 @@
+{% extends "layout.html" %}
+{% block content %}
+
+<header>
+  <a>
+    <span id="logo">
+      Logo
+    </span>
+  </a>
+</header>
+
+<div class="row no-gutters">
+  <div class="col no-gutters">
+    <div class="leftside">
+      <section class="content-info">
+	<span>
+	  Beneficios
+	</span>
+
+	<div class="content-benefits">
+          <span>
+            Artista
+            <ul class="artist">
+	      <li>
+		Un espacio para promover tus eventos
+	      </li>
+	    </ul>
+	  </span>
+
+	  <span>
+	    Usuario
+	    <ul class="users">
+	      <li>
+		Descubrir artistas y eventos relacionados a ellos cerca de ti.
+	      </li>
+	    </ul>
+	</div>
+      </section>
+    </div>
+  </div>
+
+  <div class="col no-gutters">
+    <div class="rightside">
+      <section class="content-signup">
+	<!-- To be added code for registrationform -->
+
+	<form method="POST" action"">
+	  {{ form.hidden_tag() }}
+	  <fieldset class="form-group">
+	    <legend class="border-bottom mb-4">Join Today</legend>
+	    <div class="form-group">
+	      <!-- BEGINNING OF FEEDBACK ERROR MESSAGE BLOCK -->
+	      {{ form.name.label(class="form-control-label") }}
+
+	      {% if form.name.errors %}
+	      {{ form.name(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.name.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.name(class="form-control form-control-lg") }}
+	      {% endif %}
+
+	    </div>
+	    <div class="form-group">
+	      {{ form.email.label(class="form-control-label") }}
+	      {% if form.email.errors %}
+	      {{ form.email(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.email.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.email(class="form-control form-control-lg") }}
+	      {% endif %}
+	    </div>
+	    <div class="form-group">
+	      {{ form.password.label(class="form-control-label") }}
+	      {% if form.password.errors %}
+	      {{ form.password(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.password.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.password(class="form-control form-control-lg") }}
+	      {% endif %}
+	    </div>
+	    <div class="form-group">
+	      {{ form.confirm_password.label(class="form-control-label") }}
+	      {% if form.confirm_password.errors %}
+	      {{ form.confirm_password(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.confirm_password.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.confirm_password(class="form-control form-control-lg") }}
+	      {% endif %}
+	    </div>
+	    <!-- END OF FEEDBACK ERROR MESSAGE BLOCK -->
+	  </fieldset>
+	  <div class="form-group">
+	    {{ form.submit(class="btn btn-outline-info") }}
+	  </div>
+	</form>
+    </div>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+	Already Have An Account? <a class="ml-2" href="{{url_for('login') }}">Sign In</a>
+      </small>
+
+      <!-- Implementing register 'This is a test'
+	{% for form in forms %}
+        <form action="signup.html" method="GET">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder={{ form.name }} required>
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder={{ form.email }}required>
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder={{ form.password }} required>
+          </div>
+	  <div>
+            <label for="confirm-pass">Confirm Password:</label>
+            <input type="confirm-pass" name="confirm-pass" placeholder={{ form.confirm }} required>
+	  </div>
+          <button type="submit">Submit</button>
+	  {% endfor %}
+        </form>
+	-->
+
+      </section>
+    </div>
+  </div>
+
+{% endblock %}
