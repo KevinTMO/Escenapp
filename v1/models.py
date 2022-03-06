@@ -8,42 +8,54 @@ def load_user(user_id):
     this function should work the process of login/logout of the user
     by id
     """
-    return User.query.get(int(user_id))
+    return Artist.query.get(int(user_id))
 
 """ Below is the classes/attrs for the db  """
 
-class User(db.Model, UserMixin):
-    '''
-    litedb to store user info
-    '''
-    id = db.Column(db.Integer, primary_key=True)
-    name = db.Column(db.String(20), nullable = False)
-    email = db.Column(db.String(120), unique = True, nullable = False)
-    password = db.Column(db.String(60), nullable = False)
-    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
-    profile = db.relationship('Artist', backref='artist', lazy=True)
-
-    def __repr__(self):
-        """
-        return a repr string of User object
-        """
-        return (f'User("{self.name}", "{self.email}")')
-
-
-class Artist(db.Model):
+class Artist(db.Model, UserMixin):
     """
-    ltedb to store artist info
+    sqltedb to store artist info
     """
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String(50), nullable=False)
-    genre = db.Column(db.String(30), nullable=False)
-    instrument = db.Column(db.String(50), nullable=False)
-    biography = db.Column(db.String(150), nullable=False)
-    usr_id = db.Column(db.Integer, db.ForeignKey('user.id'), nullable=False)
+    email = db.Column(db.String(120), unique = True, nullable = False)
+    password = db.Column(db.String(60), nullable = False)
+    image_file = db.Column(db.String(20), nullable=False, default='default.jpg')
+    # Adding below attrs to change in profile
+    genre = db.Column(db.String(50))
+    instrument = db.Column(db.String(50))
+    biography = db.Column(db.String(150))
 
     def __repr__(self):
         """
         return repr string of Artist obj
         """
-        return ('{}, {}, {}, {}'.format(self.name, self.genre, self.instrument,
-                                        self.biography))
+        return ('{}, {}, {}'.format(self.id, self.name, self.genre,
+                                    self.instrument, self.biography))
+
+class Gen(db.Model):
+    """
+    sql table just for genre column select field testing
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    genre = db.Column(db.String(50))
+
+    def __repr__(self):
+        """
+        return a repr of string objects
+        """
+        return "{}".format(self.genre)
+
+
+class Inst(db.Model):
+    """
+    sql table just for instrument column select field testing
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    instrument = db.Column(db.String(50))
+
+    def __repr__(self):
+        """
+        return a repr of string objects
+        """
+        return "{}".format(self.instrument)
