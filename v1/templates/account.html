@@ -1,7 +1,8 @@
 {% extends "layout.html" %}
 {% block content %}
 
-<a href="{{ url_for('logout') }}">Log out</a>
+
+<a href="{{ url_for('users.logout') }}">Log out</a>
 <div class="content-section">
   <div class="media">
     <img class="rounded-circle account-img" src="{{ image_file }}">
@@ -21,19 +22,19 @@
 	<!-- Instrument label for input usr email -->
 	<!-- Email label for input usr email -->
 	<div class="form-group">
-	  {{ form.email.label(class="form-control-label") }}
+	  {{ formE.email.label(class="form-control-label") }}
 
-	  {% if form.email.errors %}
-	  {{ form.email(class="form-control form-control-lg is-invalid") }}
+	  {% if formE.email.errors %}
+	  {{ formE.email(class="form-control form-control-lg is-invalid") }}
 	  <div class="invalid-feedback">
-	    {% for error in form.email.errors %}
+	    {% for error in formE.email.errors %}
 	    <span>
 	      {{ error }}
 	    </span>
 	    {% endfor %}
 	  </div>
 	  {% else %}
-	  {{ form.email(class="form-control form-control-lg") }}
+	  {{ formE.email(class="form-control form-control-lg") }}
 	  {% endif %}
 	</div>
 	<!-- Biography label for input usr below -->
