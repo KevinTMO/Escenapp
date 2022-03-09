@@ -1,0 +1,126 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><title>Escenapp_Sign-up</title><link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"><link rel="stylesheet" href="/assets/fonts/font-awesome.min.css"><link rel="stylesheet" href="/assets/fonts/ionicons.min.css"><link rel="stylesheet" href="/assets/css/styles.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"></head><body>{% extends "layout.html" %}
+{% block content %}
+
+<section class="content-signup">
+  <!-- To be added code for registrationform -->
+  <form method="POST" action="">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <!-- BEGINNING OF FEEDBACK ERROR MESSAGE BLOCK -->
+      <h2 class="border-bottom ml=5">Account Validation Information Required</h2>
+      <div class="form-group">
+	<!-- Name label for input usr email -->
+	{{ form.name.label(class="form-control-label") }}
+
+	{% if form.name.errors %}
+	{{ form.name(class="form-control form-control-lg is-invalid") }}
+	<div class="invalid-feedback">
+	  {% for error in form.name.errors %}
+	  <span>
+	    {{ error }}
+	  </span>
+	  {% endfor %}
+	</div>
+	{% else %}
+	{{ form.name(class="form-control form-control-lg") }}
+	{% endif %}
+      </div>
+      <!-- Genre label for input usr email -->
+      <div class="form-group">
+	{{ form.genre.label(class="form-control-label") }}
+
+	{% if form.genre.errors %}
+	{{ form.genre(class="form-control form-control-lg is-invalid") }}
+	<div class="invalid-feedback">
+	  {% for error in form.genre.errors %}
+	  <span>
+	    {{ error }}
+	  </span>
+	  {% endfor %}
+	</div>
+	{% else %}
+	{{ form.genre(class="form-control form-control-lg") }}
+	{% endif %}
+      </div>
+      <!-- Instrument label for input usr email -->
+      <div class="form-group">
+	{{ form.instrument.label(class="form-control-label") }}
+
+	{% if form.instrument.errors %}
+	{{ form.instrument(class="form-control form-control-lg is-invalid") }}
+	<div class="invalid-feedback">
+	  {% for error in form.instrument.errors %}
+	  <span>
+	    {{ error }}
+	  </span>
+	  {% endfor %}
+	</div>
+	{% else %}
+	{{ form.instrument(class="form-control form-control-lg") }}
+	{% endif %}
+      </div>
+      <!-- Account registration information required -->
+      <h2 class="border-bottom ml=5">Account Personal Information Required</h2>
+      <!-- Email label for input usr email -->
+      <div class="form-group">
+	{{ form.email.label(class="form-control-label") }}
+
+	{% if form.email.errors %}
+	{{ form.email(class="form-control form-control-lg is-invalid") }}
+	<div class="invalid-feedback">
+	  {% for error in form.email.errors %}
+	  <span>
+	    {{ error }}
+	  </span>
+	  {% endfor %}
+	</div>
+	{% else %}
+	{{ form.email(class="form-control form-control-lg") }}
+	{% endif %}
+      </div>
+      <!-- Password label for input usr email -->
+      <div class="form-group">
+	{{ form.password.label(class="form-control-label") }}
+	{% if form.password.errors %}
+	{{ form.password(class="form-control form-control-lg is-invalid") }}
+	<div class="invalid-feedback">
+	  {% for error in form.password.errors %}
+	  <span>
+	    {{ error }}
+	  </span>
+	  {% endfor %}
+	</div>
+	{% else %}
+	{{ form.password(class="form-control form-control-lg") }}
+	{% endif %}
+      </div>
+      <!-- Confirm_password label for input usr email -->
+      <div class="form-group">
+	{{ form.confirm_password.label(class="form-control-label") }}
+	{% if form.confirm_password.errors %}
+	{{ form.confirm_password(class="form-control form-control-lg is-invalid") }}
+	<div class="invalid-feedback">
+	  {% for error in form.confirm_password.errors %}
+	  <span>
+	    {{ error }}
+	  </span>
+	  {% endfor %}
+	</div>
+	{% else %}
+	{{ form.confirm_password(class="form-control form-control-lg") }}
+	{% endif %}
+      </div>
+      <!-- END OF FEEDBACK ERROR MESSAGE BLOCK -->
+    </fieldset>
+    <div class="form-group">
+      {{ form.submit(class="btn btn-outline-info") }}
+    </div>
+  </form>
+  <div class="border-top pt-3">
+    <small class="text-muted">
+      Already Have An Account? <a class="ml-2" href="{{url_for('users.login') }}">Sign In</a>
+    </small>
+  </div>
+</section>
+
+{% endblock %}<script src="/assets/bootstrap/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="/assets/js/script.min.js"></script></body></html>

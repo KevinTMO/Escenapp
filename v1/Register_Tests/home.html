@@ -1,0 +1,161 @@
+<!DOCTYPE html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no"><title>Escenapp_Sign-up</title><link rel="stylesheet" href="/assets/bootstrap/css/bootstrap.min.css"><link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Montserrat&amp;display=swap"><link rel="stylesheet" href="/assets/fonts/font-awesome.min.css"><link rel="stylesheet" href="/assets/fonts/ionicons.min.css"><link rel="stylesheet" href="/assets/css/styles.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.5.2/animate.min.css"><link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css"></head><body>{% extends "main.html" %}
+{% block content %}
+
+<header>
+  <a>
+    <span id="logo">
+      Logo
+    </span>
+  </a>
+</header>
+
+<div class="row no-gutters">
+  <div class="col no-gutters">
+    <div class="leftside">
+      <section class="content-info">
+	<span>
+	  Beneficios
+	</span>
+
+	<div class="content-benefits">
+          <span>
+            Artista
+            <ul class="artist">
+	      <li>
+		Un espacio para promover tus eventos
+	      </li>
+	    </ul>
+	  </span>
+
+	  <span>
+	    Usuario
+	    <ul class="users">
+	      <li>
+		Descubrir artistas y eventos relacionados a ellos cerca de ti.
+	      </li>
+	    </ul>
+	</span></div>
+      </section>
+    </div>
+  </div>
+
+  <div class="col no-gutters">
+    <div class="rightside">
+      <section class="content-signup">
+	<!-- To be added code for registrationform -->
+
+	<form method="POST" action""="">
+	  {{ form.hidden_tag() }}
+	  <fieldset class="form-group">
+	    <legend class="border-bottom mb-4">Join Today</legend>
+	    <div class="form-group">
+	      <!-- BEGINNING OF FEEDBACK ERROR MESSAGE BLOCK -->
+	      {{ form.name.label(class="form-control-label") }}
+
+	      {% if form.name.errors %}
+	      {{ form.name(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.name.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.name(class="form-control form-control-lg") }}
+	      {% endif %}
+
+	    </div>
+	    <div class="form-group">
+	      {{ form.email.label(class="form-control-label") }}
+	      {% if form.email.errors %}
+	      {{ form.email(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.email.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.email(class="form-control form-control-lg") }}
+	      {% endif %}
+	    </div>
+	    <div class="form-group">
+	      {{ form.password.label(class="form-control-label") }}
+	      {% if form.password.errors %}
+	      {{ form.password(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.password.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.password(class="form-control form-control-lg") }}
+	      {% endif %}
+	    </div>
+	    <div class="form-group">
+	      {{ form.confirm_password.label(class="form-control-label") }}
+	      {% if form.confirm_password.errors %}
+	      {{ form.confirm_password(class="form-control form_control-lg is-invalid") }}
+
+	      <div class="invalid-feedback">
+		{% for error in form.confirm_password.errors %}
+		<span>{{ error }}</span>
+		{% endfor %}
+	      </div>
+	      {% else %}
+	      {{ form.confirm_password(class="form-control form-control-lg") }}
+	      {% endif %}
+	    </div>
+	    <!-- END OF FEEDBACK ERROR MESSAGE BLOCK -->
+	  </fieldset>
+	  <div class="form-group">
+	    {{ form.submit(class="btn btn-outline-info") }}
+	  </div>
+	</form>
+    </section></div>
+    <div class="border-top pt-3">
+      <small class="text-muted">
+	Already Have An Account? <a class="ml-2" href="{{url_for('login') }}">Sign In</a>
+      </small>
+
+	{% for form in forms %}
+        <form action="register.html" method="GET">
+          <div>
+            <label for="name">Name:</label>
+            <input type="text" name="name" id="name" placeholder="{{" form.name="" }}="" required="">
+          </div>
+          <div>
+            <label for="email">Email:</label>
+            <input type="email" name="email" id="email" placeholder="{{" form.email="" }}required="">
+          </div>
+          <div>
+            <label for="password">Password:</label>
+            <input type="password" name="password" placeholder="{{" form.password="" }}="" required="">
+          </div>
+	  <div>
+            <label for="confirm-pass">Confirm Password:</label>
+            <input type="confirm-pass" name="confirm-pass" placeholder="{{" form.confirm="" }}="" required="">
+	  </div>
+          <button type="submit">Submit</button>
+	  {% endfor %}
+        </form>
+	--&gt;
+
+      
+    </div>
+  </div>
+
+<footer>
+  <div class="footer-text">
+    <span>
+      Contact Us
+    </span>
+    <span>
+      FAQ
+    </span>
+  </div>
+</footer>
+
+{% endblock %}
+</div><script src="/assets/bootstrap/js/bootstrap.min.js"></script><script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script><script src="/assets/js/script.min.js"></script></body></html>
