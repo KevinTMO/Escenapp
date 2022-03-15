@@ -1,6 +1,6 @@
 * {
   margin: 0;
-  padding: 0;
+  padding: inherit;
   box-sizing: border-box;
 }
 
@@ -13,13 +13,17 @@ body a {
   padding: 0px;
   box-sizing: border-box;
   background-color: #ffffff;
-  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1);
-  font: bold 14px sans-serif;
+  box-shadow: 0 1px 3px 0 rgba(248, 241, 241, 0.897);
+  font: bold 20px Monserrat;
   text-align: center;
   margin: 50px;
   color: #333;
 }
 
+.btn-outline-info {
+  color: #161414;
+  border-color: #080101;
+}
 @media (max-width:400px) {
   .register-form form.custom-form {
     padding: 55px 10px;
@@ -47,10 +51,10 @@ body a {
 }
 
 .register-form .custom-form .input-column input {
-  color: #5f5f5f;
+  color: #0e0303;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
   padding: 0px;
-  border: 1px solid #dbdbdb;
+  border: 1px solid #313030;
   border-radius: 2px;
   height: 42px;
 }
@@ -65,14 +69,14 @@ body a {
 
 .register-form .custom-form .submit-button {
   border-radius: 2px;
-  background: #6caee0;
-  color: #ffffff;
+  background: #182936;
+  color: #050505;
   font-weight: bold;
   box-shadow: 1px 2px 4px 0 rgba(0, 0, 0, 0.08);
   padding: 0px 0px;
   border: 0;
   margin: 30px;
-  outline: none;
+  outline: outline-style;
 }
 
 .form-control {
@@ -86,9 +90,90 @@ body a {
   background-color: #fff;
   background-clip: padding-box;
   border: 1px solid #ced4da;
-  -webkit-appearance: none;
+  -webkit-appearance: button;
   -moz-appearance: none;
   appearance: none;
-  border-radius: .25rem;
+  border-radius: .75rem;
   transition: border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+#home {
+  width: 100%;
+  height: 100vh;
+  background: url("../images/pexels-peter-marjoram-4546984.jpg") center / cover no-repeat;
+}
+
+@media (min-width: 768px) {
+  #home {
+    background: url("../images/pexels-sebastian-ervi-1763075.jpg") center / cover no-repeat;
+  }
+}
+
+.navbar-brand {
+  background: url("../images/f5219dda-9638-4c0d-8bfd-1a5b15961a09.sketchpad(2).png") center / 80% no-repeat;
+  width: 180px;
+  height: 40px;
+}
+
+#navcol-1 {
+  font-size: 16px;
+  font-family: Montserrat, sans-serif;
+}
+
+.tagline {
+  text-align: center;
+  padding-bottom: 150px;
+}
+
+#home_bottom .container {
+  max-width: 700px;
+}
+
+.icons {
+  height: 50%;
+  font-size: 30px;
+}
+
+#artists-user-info {
+  width: 50%;
+  height: 50vh;
+  flex: 0 0 auto;
+  max-width: 100%;
+}
+
+@media (min-width: 300px) {
+  #artists-user-info {
+    width: 50%;
+    height: 50vh;
+    flex: 0 0 auto;
+    max-width: 100%;
+  }
+}
+
+.artist-column {
+  height: 100%;
+}
+
+.user-column {
+  height: 100%;
+}
+
+.user-image {
+  min-height: 30rem;
+}
+
+.credits {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  background: var(--bs-gray-dark);
+}
+
+img {
+  vertical-align: middle;
+}
+
+.btn-outline-info:hover {
+  color: rgb(255, 253, 253);
+  background-color: #0d0d0e;
+  border-color: #050505;
 }
