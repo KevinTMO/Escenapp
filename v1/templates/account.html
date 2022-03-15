@@ -13,6 +13,18 @@
       <p class="text-secondary"><h3>{{ current_user.instrument }}</h3></p>
       <p class="text-secondary"><h3>{{ current_user.biography }}</h3></p>
     </div>
+    {% for post in events %}
+    <div class="article-metadata">
+      <a class="mr-2" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.event.name }}</a>
+    </div>
+    <p class="article-content">
+      {{ post.title }}
+      {{ post.eventType }}
+      {{ post.description }}
+      {{ post.date }}
+      {{ post.hour }}
+    </p>
+    {% endfor %}
     <form method="POST" action="" enctype="multipart/form-data">
       {{ form.hidden_tag() }}
       <fieldset class="form-group">

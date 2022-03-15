@@ -26,6 +26,7 @@ class Artist(db.Model, UserMixin):
     genre = db.Column(db.String(50))
     instrument = db.Column(db.String(50))
     biography = db.Column(db.String(150))
+    posts = db.relationship('PostEvent', backref='event', lazy=True)
 
 
     def get_reset_token(self, expires_sec=1800):
@@ -54,6 +55,26 @@ class Artist(db.Model, UserMixin):
         """
         return ('{}, {}, {}'.format(self.id, self.name, self.genre,
                                     self.instrument, self.biography))
+
+class PostEvent(db.Model):
+    """
+    table to stored artist events information
+    """
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(150), nullable=False)
+    eventType = db.Column(db.String(50), nullable=False)
+    description = db.Column(db.String(250), nullable=False)
+    date = db.Column(db.String(20), nullable=False)
+    hour = db.Column(db.String(25), nullable=False)
+    artist_id = db.Column(db.Integer, db.ForeignKey('artist.id'), nullable=False)
+
+
+    def __repr__(self):
+        """
+        return a repr str of data in table
+        """
+        return ('{}, {}, {}'.format(self.title, self.date, self.artist_id))
+
 
 class Gen(db.Model):
     """

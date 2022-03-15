@@ -65,14 +65,13 @@ class UpdateAccountForm(FlaskForm):
     """
     biography = StringField('Biography', validators=[Length(max=150)])
     picture = FileField('Update Profile Picture', validators=[FileAllowed(['jpg', 'png'])])
-
     submit = SubmitField('Update')
 
 class UpdateEmailForm(FlaskForm):
     """
     Creating the attrs to accept the information from the usr/artist
     """
-    email = StringField('Email', validators=[DataRequired(), Email()])
+    email = StringField('Email', validators=[Email()])
 
     def validate_email(self, email):
         """

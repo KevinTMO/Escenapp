@@ -9,6 +9,7 @@ from flask_mail import Mail
 # Configuration of flask plus secret key for our webapp security purpose
 
 app = Flask(__name__)
+app.url_map.strict_slashes = False
 app.config['SECRET_KEY'] = '73be4410e3006053dfe913a29efe79be'
 app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///site.db'
 app.config['SQLALCHEMY_BINDS'] = {
@@ -37,6 +38,12 @@ mail = Mail(app)
 
 from v1.users.routes import users
 from v1.main.routes import main
+from v1.posts.routes import posts
+from v1.errors.handlers import errors
+
+# Blueprints register
 
 app.register_blueprint(users)
 app.register_blueprint(main)
+app.register_blueprint(posts)
+app.register_blueprint(errors)

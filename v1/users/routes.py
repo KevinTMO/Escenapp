@@ -3,7 +3,7 @@ from flask import render_template, url_for, flash, redirect, request
 from flask_login import login_user, logout_user, login_required, current_user
 from v1.users.forms import (RegistrationForm, LoginForm, UpdateAccountForm,
                       RequestResetForm, ResetPasswordForm, UpdateEmailForm)
-from v1.models import Artist
+from v1.models import Artist, PostEvent
 from v1 import app, db, bcrypt, mail
 from v1.users.utils import save_picture, send_reset_email
 
@@ -62,6 +62,7 @@ def account():
     """
     form = UpdateAccountForm()
     formE = UpdateEmailForm()
+    events = PostEvent.query.all() # get all events from db
     if form.validate_on_submit():
         if form.picture.data:
             picture_file = save_picture(form.picture.data)
@@ -75,7 +76,7 @@ def account():
         return redirect(url_for('users.account'))
     image_file = url_for('static', filename='profile_pics/' + current_user.image_file)
     return render_template('account.html', title='Account', image_file=image_file,
-                           form=form, formE=formE)
+                           form=form, formE=formE, events=events)
 
 
 @users.route('/logout')
@@ -84,7 +85,7 @@ def logout():
     def to logout the user from his account
     """
     logout_user()
-    return redirect(url_for('users.login'))
+    return redirect(url_for('main.home'))
 
 
 @users.route('/reset_password', methods=['GET', 'POST'])

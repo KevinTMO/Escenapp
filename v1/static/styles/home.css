@@ -6,17 +6,24 @@ body {
 #home {
   width: 100%;
   height: 100vh;
-  background: url("../../assets/img/pexels-peter-marjoram-4546984.jpg") center / cover no-repeat;
+  background: url("../images/pexels-peter-marjoram-4546984.jpg") center / cover no-repeat;
 }
 
 @media (min-width: 768px) {
   #home {
-    background: url("../../assets/img/pexels-sebastian-ervi-1763075.jpg") center / cover no-repeat;
+    background: url("../images/pexels-sebastian-ervi-1763075.jpg") center / cover no-repeat;
+  }
+}
+
+@media (min-width: 992px) {
+  #description {
+    text-align: center;
+    font-size: 25px;
   }
 }
 
 .navbar-brand {
-  background: url("../../assets/img/f5219dda-9638-4c0d-8bfd-1a5b15961a09.sketchpad(2).png") center / 80% no-repeat;
+  background: url("../images/f5219dda-9638-4c0d-8bfd-1a5b15961a09.sketchpad(2).png") center / 80% no-repeat;
   width: 180px;
   height: 40px;
 }
