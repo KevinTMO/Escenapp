@@ -41,6 +41,13 @@ h1 {
   }
 }
 
+@media (min-width: 992px) {
+  #description {
+    text-align: center;
+    font-size: 25px;
+  }
+}
+
 .footer-basic {
   padding: 40px 0;
   background-color: #ffffff;

@@ -15,13 +15,6 @@ body {
   }
 }
 
-@media (min-width: 992px) {
-  #description {
-    text-align: center;
-    font-size: 25px;
-  }
-}
-
 .navbar-brand {
   background: url("../images/f5219dda-9638-4c0d-8bfd-1a5b15961a09.sketchpad(2).png") center / 80% no-repeat;
   width: 180px;
