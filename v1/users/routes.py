@@ -90,6 +90,10 @@ def logout():
 
 @users.route('/reset_password', methods=['GET', 'POST'])
 def reset_request():
+    """
+    Validate on submit if the emails is in our database then send an email with
+    token
+    """
     if current_user.is_authenticated:
         return redirect(url_for('users.home'))
 
@@ -104,6 +108,9 @@ def reset_request():
 
 @users.route('/reset_password/<token>', methods=['GET', 'POST'])
 def reset_token(token):
+    """
+    Verify if the token is not expired before giving access to reset password
+    """
     if current_user.is_authenticated:
         return redirect(url_for('users.home'))
 
@@ -121,3 +128,46 @@ def reset_token(token):
         return redirect(url_for('users.login'))
 
     return render_template('reset_token.html', title='Reset Password', form=form)
+
+
+@users.route('/all_users', methods=['GET', 'POST'])
+def allUsers():
+    """
+    Return all users from the database table Artist
+    """
+    artists = list(Artist.query.all())
+
+    obj = {}
+    objs = {}
+
+    for artist in artists:
+        artist = str(artist)
+        name = artist.split(',')[1][1:]
+        genre = artist.split(',')[2][1:]
+        instrument = artist.split(',')[3][1:]
+        biography = artist.split(',')[4][1:]
+
+        obj = {
+            'name': name,
+            'genre': genre,
+            'instrument': instrument,
+            'biography': biography
+        }
+
+        objs[artist.split(',')[0]] = obj
+
+#    print(objs)
+
+    '''
+    dic = {
+        'Artist Information': {
+            'Name': current_user.name,
+            'Email': current_user.email,
+            'Genre': current_user.genre,
+            'Instrument': current_user.instrument,
+            'Biography': current_user.biography,
+            'Picture': current_user.image_file
+        }
+    }
+    '''
+    return (objs)

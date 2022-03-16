@@ -53,7 +53,7 @@ class Artist(db.Model, UserMixin):
         """
         return repr string of Artist obj
         """
-        return ('{}, {}, {}'.format(self.id, self.name, self.genre,
+        return ('{}, {}, {}, {}, {}'.format(self.id, self.name, self.genre,
                                     self.instrument, self.biography))
 
 class PostEvent(db.Model):

@@ -23,7 +23,8 @@ def newEvent():
         db.session.commit()
         flash('Your event has been created!', 'success')
         return redirect(url_for('users.account'))
-    return render_template('account.html', title='New Event', form=form)
+    return render_template('new-event.html', title='New Event',
+                           legend="Event Form", form=form)
 
 
 @posts.route('/account/<int:post_id>')

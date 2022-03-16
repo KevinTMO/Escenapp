@@ -13,4 +13,4 @@ class EventsForm(FlaskForm):
     date = StringField('Date', validators=[DataRequired()])
     hour = StringField('Hour', validators=[DataRequired()])
 
-    submit = SubmitField('Create')
+    submit = SubmitField('Post')
