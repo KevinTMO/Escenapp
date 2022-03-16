@@ -28,7 +28,7 @@ body {
 
 .tagline {
   text-align: center;
-  padding-bottom: 150px;
+  padding: 0px;
 }
 
 #home_bottom .container {
@@ -69,11 +69,16 @@ body {
 }
 
 .credits {
-  padding-top: 7rem;
-  padding-bottom: 7rem;
+  padding-top: 5rem;
+  padding-bottom: 3rem;
   background: var(--bs-gray-dark);
 }
 
+.image-container {
+  text-align: center;
+}
+
 img {
-  vertical-align: middle;
+  width: 100px;
+  height: 100px;
 }

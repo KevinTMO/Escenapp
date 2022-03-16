@@ -1,3 +1,4 @@
 # Ignoring pycache files
 *.pyc
 __pycache__
+*.#
