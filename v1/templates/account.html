@@ -25,12 +25,12 @@
                     <li class="nav-item"><a class="nav-link" href="/about">About</a></li>
                     <li class="nav-item"></li>
                 </ul>
-            </div><a href="{{ url_for('users.logout') }}"><button class="btn btn-dark" type="button">Log Out</button><a class="btn btn-dark" role="button" style="margin-left: 5px;" href="{{ url_for('posts.newEvent') }}">Add Event</a><a class="btn btn-dark" role="button" style="margin-left: 5px;" href="settings">Settings</a>
+            </div><a href="{{ url_for('users.logout') }}"><button class="btn btn-dark" type="button">Log Out</button><a class="btn btn-dark" role="button" style="margin-left: 5px;" href="{{ url_for('posts.newEvent') }}">Add Event</a><a class="btn btn-dark" role="button" style="margin-left: 5px;" href="{{ url_for('users.updateAccount') }}">Update Account</a>
         </div>
     </nav>
     <div class="container">
         <div class="row" style="margin-top: 10px;">
-            <div class="col-6 text-center artist-col" style="border-style: double;"><img id="artist-img" src="https://via.placeholder.com/150?text=Artist+Image">
+            <div class="col-6 text-center artist-col" style="border-style: double;"><img id="artist-img" src="{{ image_file }}">
               <p id="artist-p">{{ current_user.name }}</p>
               <p id="artist-p">{{ current_user.genre }}</p>
               <p id="artist-p">{{ current_user.instrument }}</p>

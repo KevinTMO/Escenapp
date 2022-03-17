@@ -4,33 +4,12 @@
 
 <a href="{{ url_for('users.logout') }}">Log out</a>
 <div class="content-section">
-  <div class="media">
-    <img class="rounded-circle account-img" src="{{ image_file }}">
-    <div class="media-body">
-      <h1 class="account-heading">{{ current_user.name }}</h1>
-      <p class="text-secondary"><h3>{{ current_user.email }}</h3></p>
-      <p class="text-secondary"><h3>{{ current_user.genre }}</h3></p>
-      <p class="text-secondary"><h3>{{ current_user.instrument }}</h3></p>
-      <p class="text-secondary"><h3>{{ current_user.biography }}</h3></p>
-    </div>
-    {% for post in events %}
-    <div class="article-metadata">
-      <a class="mr-2" href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.event.name }}</a>
-    </div>
-    <p class="article-content">
-      {{ post.title }}
-      {{ post.eventType }}
-      {{ post.description }}
-      {{ post.date }}
-      {{ post.hour }}
-    </p>
-    {% endfor %}
-    <form method="POST" action="" enctype="multipart/form-data">
-      {{ form.hidden_tag() }}
-      <fieldset class="form-group">
-	<!-- BEGINNING OF FEEDBACK ERROR MESSAGE BLOCK -->
-	<legend class="border-bottom ml-4">Account Info</legend>
-	<div class="form-group">
+  <form method="POST" action="" enctype="multipart/form-data">
+    {{ form.hidden_tag() }}
+    <fieldset class="form-group">
+      <!-- BEGINNING OF FEEDBACK ERROR MESSAGE BLOCK -->
+      <legend class="border-bottom ml-4">Account Info</legend>
+      <div class="form-group">
 	<!-- Instrument label for input usr email -->
 	<!-- Email label for input usr email -->
 	<div class="form-group">
