@@ -36,8 +36,9 @@
                 <!---- START OF REGISTRATION FORM----->
                 {{ form.hidden_tag() }}
                 <fieldset class="form-group">
-                 <!-- Name label for input usr email -->
-                 <div class="form-group" id="form-control" type="text" style="margin-top: 40px;">
+
+                  <!-- Name label for input usr email -->
+                  <div class="form-group" id="form-control">
                     {{ form.name.label(class="form-control-label") }}
 
                     {% if form.name.errors %}
@@ -145,19 +146,22 @@
                   <!-- END OF FEEDBACK ERROR MESSAGE BLOCK -->
 
                   <!---------- Submit botton ------------->
-                  <div class="form-btn" type="submit" style="margin-left: 0px;">
+                  <div class="form-btn" type="submit" style="margin-left: auto;">
                     {{ form.submit(class="btn btn-outline-info") }}
                   </div>
                 </fieldset>
                 <div class="border-top pt-3">
                   <small class="text-muted">
-                    Already Have An Account? <a class="ml-2" href="{{url_for('users.login') }}">Sign In</a>
+                    Already Have An Account?
+
+                    <a class="ml-2" href="{{url_for('users.login') }}">Sign In</a>
                   </small>
                 </div>
               </form>
-
             </div>
           </div>
+        </div>
+      </div>
     </section>
   </main>
 </body>

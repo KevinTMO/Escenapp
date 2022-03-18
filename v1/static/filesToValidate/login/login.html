@@ -16,6 +16,7 @@
 </head>
 
 <!-- Navbar starts -->
+
 <body>
     <nav class="navbar navbar-light navbar-expand-md bg-light">
         <div class="container-fluid">
@@ -36,16 +37,16 @@
                         <div>
                             <form class="text-center" form method="POST" action="">
                                 <h3 id="form-head" class="border-bottom ml=5">Login </h3>
-                                
+
                                 <!------------ Start Login Form Jinja ------------------->
                                 {{ form.hidden_tag() }}
                                 <fieldset class="form-group">
-                                <!---- EMAIL INPUT ----->
+                                    <!---- EMAIL INPUT ----->
                                     <div class="form-group">
                                         {{ form.email.label(class="form-control-label") }}
                                         {% if form.email.errors %}
                                         {{ form.email(class="form-control form-control-lg is-invalid") }}
-                                        
+
                                         <!-- BEGINNING OF FEEDBACK ERROR MESSAGE BLOCK -->
                                         <div class="invalid-feedback">
                                             {% for error in form.email.errors %}
@@ -80,16 +81,21 @@
                                         {{ form.remember.label(class="form-check-label") }}
                                     </div>
                                     <!----- SUBMIT BUTTON ---->
-                                    <div class="form-btn" type="submit" style="margin-left: 0px; ">
+                                    <div class="form-btn" type="submit" style="margin-left: auto;">
                                         {{ form.submit(class="btn btn-outline-info") }}
                                     </div>
+
+
                                 </fieldset>
-                                <div class="border-top pt-3">
-                                    <small class="text-muted">
-                                        Need An Account?
-                                        <a class="ml-2" href="{{url_for('users.register') }}">Register</a>
-                                    </small>
-                                </div>
+                                <small class="text-muted ml-2">
+                                    <a class="ml-2" href="{{ url_for('users.reset_request') }}">Forgot Password?</a>
+                                    <div class="border-top pt-3">
+                                        <small class="text-muted ml-2">
+                                            Need An Account?
+                                            <a class="ml-2" href="{{url_for('users.register') }}">Register</a>
+                                        </small>
+                                    </div>
+                                </small>
                             </form>
                         </div>
                     </div>
