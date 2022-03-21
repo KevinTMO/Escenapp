@@ -37,7 +37,7 @@
                 </div>
             </nav>
         </div>
-        <h2 class="display-1 tagline"><strong>Connecting you to your local scene.</strong></h2>
+         <h2 class="display-1 tagline"><strong>Connecting you to your local scene.</strong></h2>
         <div id="home_bottom">
             <div class="container">
                 <div class="row text-center icons">
@@ -55,76 +55,88 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col"><a href="#credits"><button class="btn btn-link arrow-button" type="button" style="width: 100%;color: rgb(255,255,255);font-size: 32px;border-style: none;"><i class="icon ion-ios-arrow-down"></i></button></a></div>
+                    <div class="col">
+                        <a class="btn btn-link arrow-button" role="button" style="width: 100%;color: rgb(255,255,255);font-size: 32px;border-style: none;" href="#credits"><i class="icon ion-ios-arrow-down"></i></a>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
-    <section id="artist-user-info">
-        <div class="container-fluid">
-            <div class="row g-0">
-                <div class="col-6 my-auto user-column">
-                    <h1 style="text-align: center;font-family: Montserrat, sans-serif;color: rgb(255, 255, 255);margin-top: 25px;"><strong>Artists</strong></h1>
-                    <p class="lead text-center" style="padding: 50px;font-family: Montserrat, sans-serif;">Are you an artist? Create an artist profile and add your events to our growing database of artistic and cultural events. Promote your events to our expanding user base to continue uniting our growing artistic scene.</p>
-                </div>
-                <div class="col-6 my-auto user-image" style="background: url(&quot;../static/images/pexels-karolina-grabowska-4471894.jpg&quot;) center / cover no-repeat;"><span></span></div>
-            </div>
-        </div>
-        <div class="container-fluid">
-            <div class="row g-0">
-                <div class="col-6 col-md-6 my-auto user-image" style="background: url(&quot;../static/images/pexels-luis-quintero-2014773.jpg&quot;) center / cover no-repeat;"><span></span></div>
-                <div class="col-6 col-md-6 my-auto user-image">
-                    <h1 style="text-align: center;font-family: Montserrat, sans-serif;font-weight: bold;margin-top: 25px;">Users</h1>
-                    <p class="lead text-center" style="padding: 50px;font-family: Montserrat, sans-serif;">Users are welcome to browse our artist generated database to find events that suit your liking near you. You can find live events such as live music, art, theatre, comedy and more. Never miss out on events near you and find new spots you may not have heard of yet.</p>
+    <section class="d-flex flex-column justify-content-center" id="info">
+        <div class="container-fluid p-0" id="artist">
+            <div>
+                <div class="row g-0">
+                    <div class="col-6 my-auto col-md-6 info-column">
+                        <h1><strong>Artists</strong></h1>
+                        <p class="lead text-center">Are you an artist? Create an artist profile and add your events to our growing database of artistic and cultural events. Promote your events to our expanding user base to continue uniting our growing artistic scene.</p>
+                    </div>
+                    <div class="col-6 my-auto col-md-6 info-image" style="background: url('assets/img/pexels-karolina-grabowska-4471894.jpg') center / cover no-repeat;"><span></span></div>
                 </div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row g-0">
-                <div class="col-6 my-auto user-column">
-                    <h1 style="text-align: center;font-family: Montserrat, sans-serif;color: rgb(255, 255, 255);margin-top: 25px;">Events</h1>
-                    <p class="lead text-center" style="padding: 50px;font-family: Montserrat, sans-serif;">Find events near you and to your liking. Don't miss out on anything nearby. Everything goes from concerts to art expos to comedy shows and theatre. Everyone deserves their spot and everyone has the right to hear about it.</p>
+        <div class="container-fluid" id="user">
+            <div>
+                <div class="row g-0">
+                    <div class="col-6 col-md-6 my-auto info-image" style="background: url('assets/img/pexels-luis-quintero-2014773.jpg') center / cover no-repeat;"><span></span></div>
+                    <div class="col-6 col-md-6 my-auto info-column">
+                        <h1>Users</h1>
+                        <p class="lead text-center">Users are welcome to browse our artist generated database to find events that suit your liking near you. You can find live events such as live music, art, theatre, comedy and more. Never miss out on events near you and find new spots you may not have heard of yet.</p>
+                    </div>
                 </div>
-                <div class="col-6 my-auto user-image" style="background: url(&quot;../static/images/panagiotis-falcos-akguWjJ1oR8-unsplash.jpg&quot;) center / cover no-repeat;"><span></span></div>
             </div>
         </div>
-        <div class="container-fluid">
-            <div class="row g-0">
-                <div class="col-6 col-md-6 my-auto user-image" style="background: url(&quot../static/images/alfonso-scarpa-e12EkMYv44U-unsplash.jpg&quot;) no-repeat;background-size: cover;"><span></span></div>
-                <div class="col-6 col-md-6 my-auto user-image">
-                    <h1 style="text-align: center;font-family: Montserrat, sans-serif;font-weight: bold;margin-top: 25px;">Connect</h1>
-                    <p class="lead text-center" style="padding: 50px;font-family: Montserrat, sans-serif;">Connect with your favorite artists, connect with your favorite scene, and more importantly, connect with yourself. Your favorite events right at the reach of your fingertips. Get back into the world and enjoy what you love the most.</p>
+        <div class="container-fluid" id="events">
+            <div>
+                <div class="row g-0">
+                    <div class="col-6 my-auto col-md-6 info-column">
+                        <h1 style="margin-top: 25px;">Events</h1>
+                        <p class="lead text-center" style="padding: 50px;font-family: Montserrat, sans-serif;">Find events near you and to your liking. Don't miss out on anything nearby. Everything goes from concerts to art expos to comedy shows and theatre. Everyone deserves their spot and everyone has the right to hear about it.</p>
+                    </div>
+                    <div class="col-6 my-auto col-md-6 info-image" style="background: url('assets/img/panagiotis-falcos-akguWjJ1oR8-unsplash.jpg') center / cover no-repeat;"><span></span></div>
+                </div>
+            </div>
+        </div>
+        <div class="container-fluid" id="connect">
+            <div>
+                <div class="row g-0">
+                    <div class="col-6 col-md-6 my-auto info-image" style="background: url('assets/img/alfonso-scarpa-e12EkMYv44U-unsplash.jpg') no-repeat;background-size: cover;"><span></span></div>
+                    <div class="col-6 col-md-6 my-auto info-column">
+                        <h1>Connect</h1>
+                        <p class="lead text-center">Connect with your favorite artists, connect with your favorite scene, and more importantly, connect with yourself. Your favorite events right at the reach of your fingertips. Get back into the world and enjoy what you love the most.</p>
+                    </div>
                 </div>
             </div>
         </div>
     </section>
     <section id="credits">
-        <div class="container credits" style="height: 370px;">
-            <h2 style="font-family: Montserrat, sans-serif;font-weight: bold;text-align: center;">Developed by</h2>
-            <div class="row">
-                <div class="col">
-                    <div class="image-container"><img class="rounded-circle" style="padding-bottom: 5px;" src="../static/images/devs/DSC05686-Edit-2.jpg">
-                        <h5 style="text-align: center;font-family: Montserrat, sans-serif;font-weight: bold;">Yared Torres</h5>
-                        <p style="text-align: center;font-family: Montserrat, sans-serif;font-weight: bold;">Frontend</p>
+        <div>
+            <div class="container text-center credits">
+                <h2>Developed by</h2>
+                <div class="row" style="margin-top: 50px;">
+                    <div class="col">
+                        <div class="image-container"><img class="rounded-circle" id="home-img" src="assets/img/DSC05686-Edit-2.jpg">
+                            <h5>Yared Torres</h5>
+                            <p>Frontend</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="image-container"><img class="rounded-circle" style="padding-bottom: 5px;" src="../static/images/devs/70630575.jpg">
-                        <h5 style="font-family: Montserrat, sans-serif;text-align: center;font-weight: bold;">Kevin Ramos</h5>
-                        <p style="font-family: Montserrat, sans-serif;text-align: center;font-weight: bold;">Backend</p>
+                    <div class="col">
+                        <div class="image-container"><img class="rounded-circle" id="home-img" src="assets/img/70630575.jpg">
+                            <h5>Kevin Ramos</h5>
+                            <p>Backend</p>
+                        </div>
                     </div>
-                </div>
-                <div class="col">
-                    <div class="image-container"><img class="rounded-circle" style="padding-bottom: 5px;" src="../static/images/devs/30163478.jpg">
-                        <h5 style="font-family: Montserrat, sans-serif;text-align: center;font-weight: bold;">Sergio Vera</h5>
-                        <p style="font-family: Montserrat, sans-serif;text-align: center;font-weight: bold;">Backend</p>
+                    <div class="col">
+                        <div class="image-container"><img class="rounded-circle" id="home-img" src="assets/img/30163478.jpg">
+                            <h5>Sergio Vera</h5>
+                            <p>Frontend/Backend</p>
+                        </div>
                     </div>
-                </div>
+                </div><a class="btn btn-dark" role="button" id="about-btn" href="/about">About Us</a>
             </div>
-        </div>
-        <div class="container">
-            <div class="row">
-                <div class="col"><a class="btn btn-dark" role="button" style="font-family: Montserrat, sans-serif;width: 100%;height: 38px;" href="#home">Return to Top</a></div>
+            <div class="container">
+                <div class="row">
+                    <div class="col"><a class="btn btn-dark" role="button" id="return-btn" href="#home">Return to Top</a></div>
+                </div>
             </div>
         </div>
     </section>
