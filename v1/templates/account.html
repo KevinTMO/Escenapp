@@ -11,11 +11,11 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/ionicons/2.0.1/css/ionicons.min.css">
     <link rel="stylesheet"
         href="https://cdnjs.cloudflare.com/ajax/libs/simple-line-icons/2.4.1/css/simple-line-icons.min.css">
-    <link rel="stylesheet" href="assets/css/account.css">
-    <link rel="stylesheet" href="assets/css/home.css">
+    <link rel="stylesheet" href="../static/style/account.css">
+    <link rel="stylesheet" href="../static/style/home.css">
 </head>
 
-<body style="background: url('assets/img/the-blowup-26Pcgb1Dals-unsplash.jpg') top / cover no-repeat;">
+<body style="background: url('../static/images/the-blowup-26Pcgb1Dals-unsplash.jpg') top / cover no-repeat;">
     <nav class="navbar navbar-light navbar-expand-md bg-light">
         <div class="container-fluid"><a class="navbar-brand" href="/home"></a>
             <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
@@ -39,7 +39,7 @@
             <div class="row g-0" style="margin-top: 10px;">
                 <div class="col-4 offset-1 text-center artist-col">
                     <img class="rounded-circle" id="artist-img"
-                        src="https://via.placeholder.com/150?text=Artist+Image">
+                        src="{{ image_file }}">
                     <p id="artist-p">{{ current_user.name }}</p>
                     <p id="artist-p">{{ current_user.genre }}</p>
                     <p id="artist-p">{{ current_user.instrument }}</p>
