@@ -1,20 +1,14 @@
-.form-label {
-  color: rgb(0,0,0);
-}
-
 form {
   margin-top: 50px;
   font-family: Montserrat, sans-serif;
   background: #ffffff;
-  height: 500px;
+  height: auto;
   border-radius: 30px;
-}
-
-input {
+  color: black;
   text-align: center;
 }
 
-#form-head {
+.form-head {
   color: rgb(0,0,0);
   font-weight: bold;
   border-bottom-style: solid;
@@ -23,3 +17,34 @@ input {
   padding-top: 5px;
 }
 
+#form-btn {
+  margin-top: 20px;
+
+  }
+
+.btn-outline-info {
+  width: auto;
+  margin-top: 10px;
+  color: #000000;
+  border-color: #080000;
+
+}
+
+.btn-outline-info:hover {
+    color: rgb(255, 255, 255);
+    background-color: #000000;
+    border-color: #000000;
+}
+
+fieldset {
+
+  color:rgb(0, 0, 0);
+  min-width: auto;
+  padding:20px;
+  margin: 10px;
+  border: 0;
+}
+
+a {
+  color:rgb(8, 0, 0)
+}
