@@ -58,9 +58,8 @@
     <section id="event-section" class="event-section">
         <div class="container text-center">
             <div>
-                <div class="row row-cols-3 event-row">
-		    
-			{% for post in events %}                    
+                <div class="row row-cols-3 event-row">		  
+		    {% for post in events %}                    
 		        <div class="col-4 event-box">
 			<a href="/event">
                             <h3><a href="{{ url_for('posts.post', post_id=post.id) }}">{{ post.title }}</h3>
@@ -74,8 +73,7 @@
                         <i class="icon ion-android-time" id="event-icons"></i>
                         <p>{{ post.hour }}</p>
                         </div>
-		        {% endfor %}
-                    
+		    {% endfor %}                   
                 </div>
             </div>
         </div>
