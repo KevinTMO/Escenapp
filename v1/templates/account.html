@@ -2,6 +2,7 @@
 <html lang="en">
 
 <head>
+    <!-- Bootstrap CDN (Content Delivery Network) Imports Bootstrap CSS and JS  --> 	
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
     <title>EscenApp Account</title>
@@ -16,6 +17,7 @@
 </head>
 
 <body style="background: url('../static/images/the-blowup-26Pcgb1Dals-unsplash.jpg') top / cover no-repeat;">
+    <!-- Bootstrap NavBar Block -->
     <nav class="navbar navbar-light navbar-expand-md bg-light">
         <div class="container-fluid"><a class="navbar-brand" href="/home"></a>
             <button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navcol-1">
@@ -28,11 +30,13 @@
                     <li class="nav-item"></li>
                 </ul>
             </div>
+	    <!-- Added Jinja to correctly direct user for account update, event creation, and logging out -->
             <a class="btn btn-dark" role="button" style="margin-left: 5px;" href="{{ url_for('users.logout') }}">Log Out</a>
             <a class="btn btn-dark" role="button" style="margin-left: 5px;" href="{{ url_for('posts.newEvent') }}">Add Event</a>
             <a class="btn btn-dark" role="button" style="margin-left: 5px;" href="{{ url_for('users.updateAccount') }}">Update</a>
         </div>
     </nav>
+    <!-- Artist Profile Block which flexes based on content -->	
     <div class="container text-center profile">
         <div>
             <div class="row g-0" style="margin-top: 10px;">
@@ -55,10 +59,12 @@
             </div>
         </div>
     </div>
+     <!-- Event Block with Jinja to dynamically add event boxes -->	
     <section id="event-section" class="event-section">
         <div class="container text-center">
             <div>
-                <div class="row row-cols-3 event-row">		  
+                <div class="row row-cols-3 event-row">
+		    <!-- Jinja loops the HTML block as events get added and adds corresponding information to its corresponding block -->		  
 		    {% for post in events %}                    
 		        <div class="col-4 event-box">
 			<a href="/event">
